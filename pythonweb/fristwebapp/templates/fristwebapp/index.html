@@ -1,0 +1,15 @@
+{% extends "fristwebapp/base.html" %}
+{% block header %}
+<div class='jumbotron'>
+    <h3>Track your learning./记录学习</h3>
+</div>
+{% endblock header %}
+{% block content %}
+<h2>
+    <a href="{% url 'users:register' %}">注册一个账户</a>来记录你自己的学习笔记。
+</h2>
+<h2>
+    Whenever you learn something new about a topic, make an entry
+    summarizing what you've learned.
+</h2>
+{% endblock content %}

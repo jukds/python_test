@@ -1,0 +1,12 @@
+{% extends "fristwebapp/base.html" %}
+{% block content %}
+<p><a href="{% url 'fristwebapp:topic' topic.id %}">{{ topic }}</a></p>
+
+<p>Edit entry/编辑条目:</p>
+
+<form action="{% url 'fristwebapp:edit_entry' entry.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">save changes</button>
+</form>
+{% endblock content %}

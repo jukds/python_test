@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax test</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(function () {
+            $("#get").click(function () {
+                $.get("/fristwebapp/ajax_update", function (data) {
+                    $('#ajaxtext').html(data);
+                    console.log(data);
+                })
+            })
+
+            $("#next_img").click(function () {
+              
+                var p_data = { 'name': 'jukds1', 'pwd': 1234 }
+                // 使用post提交
+                $.post("/fristwebapp/ajax_update2", p_data, function (data) {
+                    $('#ajaxtext').html(data);
+                    console.log(data);
+                });
+            });
+        })
+
+
+
+
+    </script>
+</head>
+
+<body>
+        {% csrf_token %}
+    <input type="button" id="get" value="get" /><br/>
+    <input type="button" id="next_img" value="next" />
+    <p id="ajaxtext"></p>
+</body>
+
+</html>

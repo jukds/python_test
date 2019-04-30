@@ -1,0 +1,1 @@
+web:gunicorn fristwebapp:wsgi --log-file -
